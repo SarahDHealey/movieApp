@@ -3,11 +3,16 @@
     <div class="col s12 m7">
       <div class="card">
         <div class="card-content">
-          <div class="card-title">{{movie.Title}}</div>
+          <div class="card-title">
+            {{movie.Title}}
+          </div>
           <p>year: {{movie.Year}}</p>
         </div>
         <div class="card-action">
-          <a ng-href="/#/detail/{{movie.imbdID}}">more</a>
+
+          <a ng-href="/#/movies/{{movie.imdbID}}" ng-click="getMovieById()">more</a>
+          <!--********* question? Do I pass the route into the function? -->
+          <!-- or because it is in the route the cntrl can access it there? -->
         </div>
       </div>
     </div>

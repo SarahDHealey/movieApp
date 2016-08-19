@@ -7,4 +7,11 @@ app.config(function($routeProvider) {
         templateUrl : 'partials/movies.html',
         controller : 'MoviesController'
     })
+    .when('/movies/:id', {
+        templateUrl : 'partials/movie.html',
+        controller : 'MovieController'
+    })
+    .otherwise({
+      redirectTo: '/'
+    })
 });

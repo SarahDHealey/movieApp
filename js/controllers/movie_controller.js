@@ -1,20 +1,24 @@
 
-app.controller('MoviesController', function($scope, $http, MoviesFactory, $location) {
+app.controller('MovieController', function($scope, $http, MoviesFactory, $location, $routeParams) {
   $scope.vw = {};
-  $scope.vw.searchTerm = MoviesFactory.searchTerm;
-  MoviesFactory.getMovies($scope.vw.searchTerm).then(function(response) {
-    $scope.movies = response.data.Search;
-    console.log(response.data.Search);
+  console.log($routeParams.id);
+  MoviesFactory.getMovieById($routeParams.id).then(function(response) {
+    console.log('**********response data');
+    console.log(response.data);
+    $scope.movie = response.data;
   });
 });
+
+///******question? pass the parameter in the initial funct in a second func?
+
 
 // TO DO
 
 // add a /movies/:id route √
 // render partials/movie.html √
-// it uses a ShowMovieController √
-// Add a function to Factory that makes api call to get one movie by id
-// set return API value to a scope variable in controller
+// it uses a MovieController √
+// Add a function to Factory that makes api call to get one movie by id √
+// set return API value to a scope variable in controller √
 // show
 
 //**************************************************
