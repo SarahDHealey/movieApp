@@ -11,6 +11,3 @@ app.factory('MoviesFactory', function($http) {
   }
 
 });
-
-//this is what this api call is supposed to look like:
-// http://www.omdbapi.com/?i=tt0120646&plot=short&r=json
